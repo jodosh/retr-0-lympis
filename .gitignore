@@ -396,3 +396,10 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Users must supply their own ROMs
+*.zip
+*.nes
+*.smc
+*.z64
+*.gen
