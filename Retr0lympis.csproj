@@ -8,6 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="roms\**" />
+    <EmbeddedResource Remove="roms\**" />
+    <None Remove="roms\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="fceux\7z_64.dll" />
     <None Remove="fceux\auxlib.lua" />
     <None Remove="fceux\fceux.chm" />
@@ -51,14 +57,6 @@
     <None Remove="fceux\luascripts\Zelda2Life2.lua" />
     <None Remove="fceux\luascripts\Zelda2TrophyCave.lua" />
     <None Remove="fceux\taseditor.chm" />
-    <None Remove="roms\3-D Battles of World Runner, The.nes" />
-    <None Remove="roms\Castlevania.nes" />
-    <None Remove="roms\Kid Icarus.nes" />
-    <None Remove="roms\Super Dodge Ball.nes" />
-    <None Remove="roms\Super Mario Bros..nes" />
-    <None Remove="roms\Super Mario Bros.nes" />
-    <None Remove="roms\TMNT.nes" />
-    <None Remove="roms\Zelda 2 - The Adventure of Link.nes" />
   </ItemGroup>
 
   <ItemGroup>
@@ -180,27 +178,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\taseditor.chm">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\3-D Battles of World Runner, The.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\Castlevania.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\Kid Icarus.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\Super Dodge Ball.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\Super Mario Bros.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\TMNT.nes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="roms\Zelda 2 - The Adventure of Link.nes">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
