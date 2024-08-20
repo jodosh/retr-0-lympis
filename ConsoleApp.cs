@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.InteropServices.JavaScript;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Retr0lympis
 {
@@ -20,6 +23,7 @@ namespace Retr0lympis
 
         private void InitializeGames()
         {
+            /*
             //SuperMario Bros 1
             Game Smb1 = new("Super Mario Bros.", "Super Mario Bros.nes");
             Smb1.AddChallenge("Get the first mushroom", "SMBChallenge1.fcs", "SMB.challenge01.lua");
@@ -66,6 +70,22 @@ namespace Retr0lympis
             games.Add(SuperDodgeBall);
 
             games.Sort((x,y) => string.Compare(x.Name,y.Name));
+            */
+
+            // Read the JSON from the file
+            var options = new JsonSerializerOptions
+            {
+                IncludeFields = true, // Include fields in deserialization
+                PropertyNameCaseInsensitive = true // Make matching case-insensitive if needed
+            };
+            var configFile = System.IO.Path.Combine("config", "challenges.json");
+            string jsonString = File.ReadAllText(configFile);
+            
+            // Deserialize the JSON string to a list of objects
+            games = JsonSerializer.Deserialize<List<Game>>(jsonString, options);
+
+            Console.WriteLine("List of objects has been exported to challenges.json");
+
         }
 
 
