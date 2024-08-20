@@ -12,9 +12,6 @@ local completion_time = nil
 local function reset_challenge()    
     enddisplaytime = 0
     message_countdown_timer = countdown_frames
-    local state = savestate.create(saveStatePath)
-    savestate.load(state)
-    startFrame = emu.framecount()
     final_time = nil
     completion_time = nil  -- Reset completion time
 end
@@ -31,15 +28,19 @@ while true do
     -- Display Title 
     coreFcn.display_title({"Kid Icarus 1-1 Challenge"})
 
-    -- Display Instructions and Countdown
-    if message_countdown_timer >= 0 then
-		coreFcn.message_and_countdown({"Beat 1-1 From here!"}, message_countdown_timer) -- Start the countdown
-		
-		--add the countdown frame to the startFrame so it doesn't affect the end result
-		if startFrame ~= nil then
-			startFrame = startFrame + 1
+    -- Display Instructions and Countdown (-60 so it keeps the message for an extra second)
+    if message_countdown_timer >= -120 then
+		-- Do the Countdown
+		if message_countdown_timer > 0 then 
+			coreFcn.message_and_countdown({"Beat 1-1 From here!"}, message_countdown_timer)
+		elseif message_countdown_timer == 0 then
+			local state = savestate.create(saveStatePath)
+			savestate.load(state)
+			startFrame = emu.framecount()
+		else
+			coreFcn.display_centered_message({"Beat 1-1 From here!"})
 		end
-
+	
 		message_countdown_timer = message_countdown_timer - 1
     end
 
