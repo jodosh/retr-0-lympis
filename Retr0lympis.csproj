@@ -40,16 +40,16 @@
     <None Remove="fceux\luascripts\CVCastleEscapeChallenge.lua" />
     <None Remove="fceux\luascripts\CVCastleEscapePart2Challenge.lua" />
     <None Remove="fceux\luascripts\KidIcarus11Challenge.lua" />
-    <None Remove="fceux\luascripts\SMBChallenge1.lua" />
+    <None Remove="fceux\luascripts\KidIcarus12Challenge.lua" />
+    <None Remove="fceux\luascripts\SMB.challenge01.lua" />
     <None Remove="fceux\luascripts\SuperDodgeBallTomMustDieChallenge.lua" />
-    <None Remove="fceux\luascripts\TMNT - Copy.challenge02.lua" />
+    <None Remove="fceux\luascripts\TEMPLATE.lua" />
     <None Remove="fceux\luascripts\TMNT.challenge01.lua" />
     <None Remove="fceux\luascripts\TMNT.challenge02.lua" />
-    <None Remove="fceux\luascripts\TMNT.FCN.lua" />
-    <None Remove="fceux\luascripts\Zelda2Challenge1.lua" />
-    <None Remove="fceux\luascripts\Zelda2HorseHead.lua" />
-    <None Remove="fceux\luascripts\Zelda2Life2.lua" />
-    <None Remove="fceux\luascripts\Zelda2TrophyCave.lua" />
+    <None Remove="fceux\luascripts\Zelda2.challenge01.lua" />
+    <None Remove="fceux\luascripts\Zelda2.challenge02.lua" />
+    <None Remove="fceux\luascripts\Zelda2.challenge03.lua" />
+    <None Remove="fceux\luascripts\Zelda2.challenge04.lua" />
     <None Remove="fceux\taseditor.chm" />
   </ItemGroup>
 
@@ -141,13 +141,16 @@
     <Content Include="fceux\luascripts\CVCastleEscapePart2Challenge.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\SMBChallenge1.lua">
+    <Content Include="fceux\luascripts\KidIcarus12Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="fceux\luascripts\SMB.challenge01.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\luascripts\SuperDodgeBallTomMustDieChallenge.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\TMNT - Copy.challenge02.lua">
+    <Content Include="fceux\luascripts\TEMPLATE.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\luascripts\TMNT.challenge01.lua">
@@ -156,19 +159,16 @@
     <Content Include="fceux\luascripts\TMNT.challenge02.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\TMNT.FCN.lua">
+    <Content Include="fceux\luascripts\Zelda2.challenge01.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\Zelda2Challenge1.lua">
+    <Content Include="fceux\luascripts\Zelda2.challenge02.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\Zelda2HorseHead.lua">
+    <Content Include="fceux\luascripts\Zelda2.challenge04.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\luascripts\Zelda2Life2.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\Zelda2TrophyCave.lua">
+    <Content Include="fceux\luascripts\Zelda2.challenge03.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\taseditor.chm">
