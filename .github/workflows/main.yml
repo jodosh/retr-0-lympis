@@ -3,10 +3,10 @@ name: Build Retr-0-lympis
 on:
   push:
     branches:
-      - main
+      - Release
   pull_request:
     branches:
-      - main
+      - Release
 
 jobs:
   build:
