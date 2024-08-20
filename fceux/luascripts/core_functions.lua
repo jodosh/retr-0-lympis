@@ -3,6 +3,7 @@ local message_display_time = 120 -- Display message for 2 seconds (120 frames)
 local message_timer = 0
 local start_pressed_last_frame = false
 local select_pressed_last_frame = false
+local down_pressed_last_frame = false
 local silver_time
 local gold_time
 local platinum_time
@@ -111,20 +112,22 @@ local function restart_or_abort()
     local input_state = joypad.get(1)
     local select_pressed = input_state["select"] or false
     local start_pressed = input_state["start"] or false
+    local down_pressed = input_state["down"] or false
 
     -- Check if Start is held down and Select is pressed for restarting the challenge
-    if start_pressed and not select_pressed_last_frame and select_pressed then
+    if start_pressed and not select_pressed_last_frame and not down_pressed_last_frame and select_pressed then
         return true
     end
 
     -- Check if Select is held down and Start is pressed to close_emulator
-    if select_pressed and not start_pressed_last_frame and start_pressed then
+    if select_pressed and down_pressed and not start_pressed_last_frame and start_pressed then
         emu.exit()
     end
 
     -- Update last frame button states
     start_pressed_last_frame = start_pressed
     select_pressed_last_frame = select_pressed
+    down_pressed_last_frame = down_pressed
     return false
 end
 
