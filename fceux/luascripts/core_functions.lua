@@ -106,6 +106,19 @@ local function display_centered_message(lines)
     end
 end
 
+-- Function to display a message and countdown to start
+local function message_and_countdown(lines, current_countdown_frame)
+	if current_countdown_frame > 0 then 
+		joypad.set(1, { start = false, select = false, up = false, down = false, left = false, right = false, A = false, B = false })  -- Lock any button during countdown
+	
+		local seconds_remaining = math.ceil(current_countdown_frame / 60)	-- calculate the quotient (seconds remaining) on the countdown
+		
+		table.insert(lines, "Starting in " .. seconds_remaining) -- Add the Starting in X seconds to the centered message.
+
+		display_centered_message(lines)
+	end
+end
+
 --Function to check if we should reset
 local function restart_or_abort()
 -- Check if the player pressed Select or Start (mapped to P1's Select and Start buttons)
@@ -133,6 +146,7 @@ end
 
 return {
     display_centered_message = display_centered_message,
+    message_and_countdown = message_and_countdown,
     frames_to_time = frames_to_time,
     restart_or_abort = restart_or_abort,
     display_title = display_title,
