@@ -2,9 +2,8 @@ local coreFcn = require("core_functions")
 
 local saveStatePath = "../fcs/KidIcarus11challenge.fcs"
 local enddisplaytime = 0
-local message_display_time = 120 -- Display message for 2 seconds (120 frames)
-local message_timer = message_display_time
-local ignore_start_for_frames = 60 -- Number of frames to ignore the Start button after reset
+local countdown_frames = 180 -- Number of frames for the countdown (180 = 3 seconds)
+local message_countdown_timer = countdown_frames
 
 local startFrame = nil
 local final_time = nil
@@ -12,18 +11,12 @@ local completion_time = nil
 
 local function reset_challenge()    
     enddisplaytime = 0
-    message_timer = 200
+    message_countdown_timer = countdown_frames
     local state = savestate.create(saveStatePath)
     savestate.load(state)
     startFrame = emu.framecount()
     final_time = nil
     completion_time = nil  -- Reset completion time
-
-    -- Manually advance the emulator to avoid game pausing
-    for i = 1, ignore_start_for_frames do
-        joypad.set(1, { start = false })  -- Force Start to be unpressed
-        emu.frameadvance()
-    end
 end
 
 local function check_challenge_end()
@@ -38,10 +31,16 @@ while true do
     -- Display Title 
     coreFcn.display_title({"Kid Icarus 1-1 Challenge"})
 
-    -- Display Instructions
-    if message_timer > 0 then
-        coreFcn.display_centered_message({"Beat 1-1 From here!"})
-        message_timer = message_timer - 1
+    -- Display Instructions and Countdown
+    if message_countdown_timer >= 0 then
+		coreFcn.message_and_countdown({"Beat 1-1 From here!"}, message_countdown_timer) -- Start the countdown
+		
+		--add the countdown frame to the startFrame so it doesn't affect the end result
+		if startFrame ~= nil then
+			startFrame = startFrame + 1
+		end
+
+		message_countdown_timer = message_countdown_timer - 1
     end
 
     if coreFcn.restart_or_abort() then
