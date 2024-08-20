@@ -22,7 +22,7 @@ namespace Retr0lympis
         {
             //SuperMario Bros 1
             Game Smb1 = new("Super Mario Bros.", "Super Mario Bros.nes");
-            Smb1.AddChallenge("Get the first mushroom", "SMBChallenge1.fcs", "SMBChallenge1.lua");
+            Smb1.AddChallenge("Get the first mushroom", "SMBChallenge1.fcs", "SMB.challenge01.lua");
             games.Add(Smb1);
 
             //The 3-D Battles of World Runner
@@ -33,16 +33,16 @@ namespace Retr0lympis
 
             //Zelda 2 - The Adventure of Link
             Game Zelda2 = new("Zelda 2 - The Adventure of Link", "Zelda 2 - The Adventure of Link.nes");
-            Zelda2.AddChallenge("Magic in the Dark", "Z2Challenge1.fcs", "Zelda2Challenge1.lua");
-            Zelda2.AddChallenge("Kill Horsehead!", "Z2Challenge2.fcs", "Zelda2HorseHead.lua");
-            Zelda2.AddChallenge("Get that Trophy!", "Z2TrophyChallenge.fcs", "Zelda2TrophyCave.lua");
-            Zelda2.AddChallenge("Get Life 2", "Z2Challenge4.fcs", "Zelda2Life2.lua");
+            Zelda2.AddChallenge("Magic in the Dark", "Z2Challenge1.fcs", "Zelda2.challenge01.lua");
+            Zelda2.AddChallenge("Kill Horsehead!", "Z2Challenge2.fcs", "Zelda2.challenge02.lua");
+            Zelda2.AddChallenge("Get that Trophy!", "Z2TrophyChallenge.fcs", "Zelda2.challenge03.lua");
+            Zelda2.AddChallenge("Get Life 2", "Z2Challenge4.fcs", "Zelda2.challenge04.lua");
             games.Add(Zelda2);
 
             //TMNT
             Game Tmnt = new("Teenage Mutant Ninja Turtles",  "TMNT.nes");
             Tmnt.AddChallenge("Clear the underwater level", "TMNT.challenge01.fcs", "TMNT.challenge01.lua");
-            Tmnt.AddChallenge("Beat Rocksteady with Raph", "TMNT.challenge02.fcs", "TMNT.FCN.lua");
+            Tmnt.AddChallenge("Beat Rocksteady with Raph", "TMNT.challenge02.fcs", "TMNT.challenge02.lua");
             games.Add(Tmnt);
 
             //CV1
