@@ -48,7 +48,6 @@ function checkMushroom()
             gui.text(10, 10, challengeName)
             gui.text(10, 30, "Time to get mushroom: " .. timeTaken .. " frames")
             emu.frameadvance()
-            gui.savescreenshotas("testing.png")
             emu.pause()
         end
     end
@@ -86,7 +85,7 @@ while true do
 
     --Display Instructions
     if message_timer > 0 then
-        coreFcn.display_centered_message({"Get the first mushroom","Hold start and then press select to restart", rom.gethash("md5")})
+        coreFcn.display_centered_message({"Get the first mushroom","Hold start and then press select to restart"})
         message_timer = message_timer -1
     end
 
