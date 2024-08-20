@@ -108,7 +108,7 @@ end
 
 -- Function to display a message and countdown to start
 local function message_and_countdown(lines, current_countdown_frame)
-	if current_frame > 0 then 
+	if current_countdown_frame > 0 then 
 		joypad.set(1, { start = false, select = false, up = false, down = false, left = false, right = false, A = false, B = false })  -- Lock any button during countdown
 	
 		local seconds_remaining = math.ceil(current_countdown_frame / 60)	-- calculate the quotient (seconds remaining) on the countdown
