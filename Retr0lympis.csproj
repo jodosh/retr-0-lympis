@@ -5,6 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>roIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -248,6 +249,7 @@
     <Content Include="fceux\taseditor.chm">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="roIcon.ico" />
   </ItemGroup>
 
 
