@@ -1,0 +1,39 @@
+name: Build Retr-0-lympis
+
+on:
+  push:
+    branches:
+      - json-loading
+  pull_request:
+    branches:
+      - json-loading
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Publish output
+      run: dotnet publish -r win-x64 --configuration Release
+
+    - name: Archive retr0lympis
+      uses: actions/upload-artifact@v4
+      with:
+          name: retr0lympis-release
+          path: |
+            bin/Release/net8.0/win-x64/
+
