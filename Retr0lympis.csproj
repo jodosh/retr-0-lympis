@@ -51,6 +51,7 @@
     <None Remove="fceux\luascripts\Zelda2.challenge03.lua" />
     <None Remove="fceux\luascripts\Zelda2.challenge04.lua" />
     <None Remove="fceux\taseditor.chm" />
+    <None Remove="images\RetroLympisBanner.png" />
     <None Remove="roms\README.txt" />
   </ItemGroup>
 
@@ -191,6 +192,9 @@
 
   <ItemGroup>
     <Content Include="fceux\luascripts\KidIcarus11Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\RetroLympisBanner.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="roms\README.txt">
