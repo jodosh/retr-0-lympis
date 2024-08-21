@@ -25,8 +25,8 @@ namespace Retr0lympis
         public Challenge(string name, string saveStatePath, string luaScriptPath)
         {
             Name = name;
-            SaveStatePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fcs", saveStatePath);
-            LuaScriptPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "luascripts", luaScriptPath);
+            SaveStatePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "fcs", saveStatePath);
+            LuaScriptPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "luascripts", luaScriptPath);
             ResultPath = luaScriptPath.Replace(".lua", ".RESULTS.txt");
         }
     }

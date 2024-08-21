@@ -9,54 +9,222 @@
 
   <ItemGroup>
     <None Remove="config\challenges.json" />
+    <None Remove="config\fcs\3-D Battles of World Runner.challenge01.fc0" />
+    <None Remove="config\fcs\Castlevania-bak.fc5" />
+    <None Remove="config\fcs\Castlevania.bak.fc0" />
+    <None Remove="config\fcs\Castlevania.fc0" />
+    <None Remove="config\fcs\Castlevania.fc2" />
+    <None Remove="config\fcs\Castlevania.fc5" />
+    <None Remove="config\fcs\Castlevania.fc6" />
+    <None Remove="config\fcs\Castlevania.fc9" />
+    <None Remove="config\fcs\CV1CastleEscape.fcs" />
+    <None Remove="config\fcs\CV1CastleEscapePart2.fcs" />
+    <None Remove="config\fcs\CV1CheatDeathChallenge.fcs" />
+    <None Remove="config\fcs\CV1Get10Hearts.fcs" />
+    <None Remove="config\fcs\CV1KillTheBat.fcs" />
+    <None Remove="config\fcs\CV1KnightAlley.fcs" />
+    <None Remove="config\fcs\CVBirdAndDudesChallenge.fcs" />
+    <None Remove="config\fcs\CVFrank.fcs" />
+    <None Remove="config\fcs\Kid Icarus-bak.fc0" />
+    <None Remove="config\fcs\Kid Icarus.bak.fc0" />
+    <None Remove="config\fcs\Kid Icarus.fc0" />
+    <None Remove="config\fcs\KidIcarus11challenge.fcs" />
+    <None Remove="config\fcs\KidIcarus12challenge.fcs" />
+    <None Remove="config\fcs\SMBChallenge1.fcs" />
+    <None Remove="config\fcs\Super Dodge Ball.bak.fc0" />
+    <None Remove="config\fcs\Super Dodge Ball.fc0" />
+    <None Remove="config\fcs\SuperDodgeTomMustDieChallenge.fcs" />
+    <None Remove="config\fcs\TMNT.challenge01.fcs" />
+    <None Remove="config\fcs\TMNT.challenge02.fcs" />
+    <None Remove="config\fcs\Z2Challenge1.fcs" />
+    <None Remove="config\fcs\Z2Challenge4.fc0" />
+    <None Remove="config\fcs\z2exploringDEBUG.fcs" />
+    <None Remove="config\fcs\Z2HorseHeadChallenge.fcs" />
+    <None Remove="config\fcs\Z2TrophyChallenge.fcs" />
+    <None Remove="config\luascripts\3-D Battles of World Runner.challenge01.lua" />
+    <None Remove="config\luascripts\core_functions.lua" />
+    <None Remove="config\luascripts\CV110HeartChallenge.lua" />
+    <None Remove="config\luascripts\CV1BatKnifeChallenge.lua" />
+    <None Remove="config\luascripts\CV1CheatDeathChallenge.lua" />
+    <None Remove="config\luascripts\CV1KnightAlleyChallenge.lua" />
+    <None Remove="config\luascripts\CVCastleEscapeChallenge.lua" />
+    <None Remove="config\luascripts\CVCastleEscapePart2Challenge.lua" />
+    <None Remove="config\luascripts\KidIcarus11Challenge.lua" />
+    <None Remove="config\luascripts\KidIcarus12Challenge.lua" />
+    <None Remove="config\luascripts\SMB.challenge01.lua" />
+    <None Remove="config\luascripts\SuperDodgeBallTomMustDieChallenge.lua" />
+    <None Remove="config\luascripts\TEMPLATE.lua" />
+    <None Remove="config\luascripts\TMNT.challenge01.lua" />
+    <None Remove="config\luascripts\TMNT.challenge02.lua" />
+    <None Remove="config\luascripts\Zelda2.challenge01.lua" />
+    <None Remove="config\luascripts\Zelda2.challenge02.lua" />
+    <None Remove="config\luascripts\Zelda2.challenge03.lua" />
+    <None Remove="config\luascripts\Zelda2.challenge04.lua" />
     <None Remove="fceux\7z_64.dll" />
     <None Remove="fceux\auxlib.lua" />
     <None Remove="fceux\fceux.chm" />
     <None Remove="fceux\fceux64.exe" />
-    <None Remove="fceux\fcs\3-D Battles of World Runner.challenge01.fc0" />
-    <None Remove="fceux\fcs\CV1CastleEscape.fcs" />
-    <None Remove="fceux\fcs\CV1CastleEscapePart2.fcs" />
-    <None Remove="fceux\fcs\CV1CheatDeathChallenge.fcs" />
-    <None Remove="fceux\fcs\CV1Get10Hearts.fcs" />
-    <None Remove="fceux\fcs\CV1KillTheBat.fcs" />
-    <None Remove="fceux\fcs\CV1KnightAlley.fcs" />
-    <None Remove="fceux\fcs\KidIcarus11challenge.fcs" />
-    <None Remove="fceux\fcs\KidIcarus12challenge.fcs" />
-    <None Remove="fceux\fcs\SMBChallenge1.fcs" />
-    <None Remove="fceux\fcs\SuperDodgeTomMustDieChallenge.fcs" />
-    <None Remove="fceux\fcs\TMNT.challenge01.fcs" />
-    <None Remove="fceux\fcs\TMNT.challenge02.fcs" />
-    <None Remove="fceux\fcs\Z2Challenge1.fcs" />
-    <None Remove="fceux\fcs\Z2Challenge4.fc0" />
-    <None Remove="fceux\fcs\Z2HorseHeadChallenge.fcs" />
-    <None Remove="fceux\fcs\Z2TrophyChallenge.fcs" />
     <None Remove="fceux\lua5.1.dll" />
     <None Remove="fceux\lua51.dll" />
-    <None Remove="fceux\luascripts\3-D Battles of World Runner.challenge01.lua" />
-    <None Remove="fceux\luascripts\core_functions.lua" />
-    <None Remove="fceux\luascripts\CV110HeartChallenge.lua" />
-    <None Remove="fceux\luascripts\CV1BatKnifeChallenge.lua" />
-    <None Remove="fceux\luascripts\CV1CheatDeathChallenge.lua" />
-    <None Remove="fceux\luascripts\CV1KnightAlleyChallenge.lua" />
-    <None Remove="fceux\luascripts\CVCastleEscapeChallenge.lua" />
-    <None Remove="fceux\luascripts\CVCastleEscapePart2Challenge.lua" />
-    <None Remove="fceux\luascripts\KidIcarus11Challenge.lua" />
-    <None Remove="fceux\luascripts\KidIcarus12Challenge.lua" />
-    <None Remove="fceux\luascripts\SMB.challenge01.lua" />
-    <None Remove="fceux\luascripts\SuperDodgeBallTomMustDieChallenge.lua" />
-    <None Remove="fceux\luascripts\TEMPLATE.lua" />
-    <None Remove="fceux\luascripts\TMNT.challenge01.lua" />
-    <None Remove="fceux\luascripts\TMNT.challenge02.lua" />
-    <None Remove="fceux\luascripts\Zelda2.challenge01.lua" />
-    <None Remove="fceux\luascripts\Zelda2.challenge02.lua" />
-    <None Remove="fceux\luascripts\Zelda2.challenge03.lua" />
-    <None Remove="fceux\luascripts\Zelda2.challenge04.lua" />
     <None Remove="fceux\taseditor.chm" />
     <None Remove="roms\README.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="config\challenges.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\3-D Battles of World Runner.challenge01.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania-bak.fc5">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.bak.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.fc2">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.fc5">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.fc6">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Castlevania.fc9">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1CastleEscape.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1CastleEscapePart2.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1CheatDeathChallenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1Get10Hearts.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1KillTheBat.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CV1KnightAlley.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CVBirdAndDudesChallenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\CVFrank.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Kid Icarus-bak.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Kid Icarus.bak.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Kid Icarus.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\KidIcarus11challenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\KidIcarus12challenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\SMBChallenge1.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Super Dodge Ball.bak.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Super Dodge Ball.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\SuperDodgeTomMustDieChallenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\TMNT.challenge01.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\TMNT.challenge02.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Z2Challenge1.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Z2Challenge4.fc0">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\z2exploringDEBUG.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Z2HorseHeadChallenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\Z2TrophyChallenge.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\3-D Battles of World Runner.challenge01.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\core_functions.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CV110HeartChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CV1BatKnifeChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CV1CheatDeathChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CV1KnightAlleyChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CVCastleEscapeChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\CVCastleEscapePart2Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\KidIcarus11Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\KidIcarus12Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\SMB.challenge01.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\SuperDodgeBallTomMustDieChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\TEMPLATE.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\TMNT.challenge01.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\TMNT.challenge02.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\Zelda2.challenge01.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\Zelda2.challenge02.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\Zelda2.challenge03.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\Zelda2.challenge04.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\7z_64.dll">
@@ -71,109 +239,10 @@
     <Content Include="fceux\fceux64.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="fceux\fcs\3-D Battles of World Runner.challenge01.fc0">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1CastleEscape.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1CastleEscapePart2.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1CheatDeathChallenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1Get10Hearts.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1KillTheBat.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\CV1KnightAlley.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\KidIcarus11challenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\KidIcarus12challenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\SMBChallenge1.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\SuperDodgeTomMustDieChallenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\TMNT.challenge02.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\Z2HorseHeadChallenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\Z2TrophyChallenge.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\fcs\Z2Challenge4.fc0">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="fceux\lua5.1.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\lua51.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\3-D Battles of World Runner.challenge01.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\core_functions.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CV110HeartChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CV1BatKnifeChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CV1CheatDeathChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CV1KnightAlleyChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CVCastleEscapeChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\CVCastleEscapePart2Challenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\KidIcarus12Challenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\SMB.challenge01.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\SuperDodgeBallTomMustDieChallenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\TEMPLATE.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\TMNT.challenge01.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\TMNT.challenge02.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\Zelda2.challenge01.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\Zelda2.challenge02.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\Zelda2.challenge04.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="fceux\luascripts\Zelda2.challenge03.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="fceux\taseditor.chm">
@@ -181,22 +250,8 @@
     </Content>
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="fceux\fcs\Z2Challenge1.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
 
   <ItemGroup>
-    <Content Include="fceux\fcs\TMNT.challenge01.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="fceux\luascripts\KidIcarus11Challenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="roms\README.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

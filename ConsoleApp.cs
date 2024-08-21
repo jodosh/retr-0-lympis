@@ -105,23 +105,26 @@ namespace Retr0lympis
                 Console.WriteLine("3. Exit");
                 Console.Write("Choose an option: ");
 
-                string choice = Console.ReadLine();
+                string? choice = Console.ReadLine();
 
-                switch (choice)
+                if (choice != null)
                 {
-                    case "1":
-                        SelectGame();
-                        break;
-                    case "2":
-                        CheckRoms();
-                        break;
-                    case "3":
-                        Environment.Exit(0);
-                        break;
-                    default:
-                        Console.WriteLine("Invalid choice. Press any key to try again.");
-                        Console.ReadKey();
-                        break;
+                    switch (choice)
+                    {
+                        case "1":
+                            SelectGame();
+                            break;
+                        case "2":
+                            CheckRoms();
+                            break;
+                        case "3":
+                            Environment.Exit(0);
+                            break;
+                        default:
+                            Console.WriteLine("Invalid choice. Press any key to try again.");
+                            Console.ReadKey();
+                            break;
+                    }
                 }
             }
         }
