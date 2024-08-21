@@ -28,7 +28,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
 
     - name: Publish output
-      run: dotnet publish -r win-x64 --self-contained --configuration Release
+      run: dotnet publish -r win-x64 --configuration Release
 
     - name: Archive retr0lympis
       id: site-zip
