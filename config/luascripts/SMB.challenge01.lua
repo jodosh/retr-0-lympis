@@ -1,105 +1,81 @@
 local coreFcn = require("core_functions")
 
 -- Boilerplate for core functions
-local message_display_time = 120 -- Display message for 2 seconds (120 frames)
-local message_timer = message_display_time
-local ignore_start_for_frames = 60 --60 Number of frames to ignore the Start button after reset
-local saveStatePath = "../fcs/SMB.Challenge01.fcs"
-local start_pressed_last_frame = false
-local select_pressed_last_frame = false
+local saveStatePath = "../fcs/SMBChallenge1.fcs"
+local start_frame = nil
+local final_time = nil
+local countdown_frames = 120 -- Number of frames for the countdown (180 = 2 seconds)
+local message_countdown_timer = countdown_frames
+
 
 -- Initialize variables
-local startFrame = nil
-local mushroomPicked = false
-local playerDied = false
 local challengeName = "Get the first mushroom"
 
 local function reset_challenge()    
-    local state = savestate.create(saveStatePath)
-    savestate.load(state)
-    startFrame = emu.framecount()
+    message_countdown_timer = countdown_frames
     final_time = nil
-    message_timer = message_display_time
-
-    -- Manually advance the emulator to avoid game pausing
-    for i = 1, ignore_start_for_frames do
-        joypad.set(1, { start = false })  -- Force Start to be unpressed
-        emu.frameadvance()
-    end
+    start_frame = nil
+    coreFcn.set_medal_times(15, 9, 4)
 end
 
 -- Function to check if Mario has picked up a mushroom
 function checkMushroom()
     local powerupStatus = memory.readbyte(0x0756) -- Address for power-up status in SMB
-    if powerupStatus == 1 and not mushroomPicked then
-        mushroomPicked = true
+    if powerupStatus == 1 then
         local endFrame = emu.framecount()
-        local timeTaken = endFrame - startFrame
+        final_time = endFrame - start_frame
 
-        -- Display the result on the screen
-        gui.text(10, 10, challengeName)
-        gui.text(10, 30, "Time to get mushroom: " .. timeTaken .. " frames")
-
-        -- Update the screen
-        emu.frameadvance()
-
-        -- Pause the emulation indefinitely
-        while true do
-            gui.text(10, 10, challengeName)
-            gui.text(10, 30, "Time to get mushroom: " .. timeTaken .. " frames")
-            emu.frameadvance()
-            emu.pause()
-        end
+        local medal_message = coreFcn.get_medal_message(final_time)
+        coreFcn.display_centered_message({
+            "Congrats! You completed challenge",
+            "in " .. coreFcn.frames_to_time(final_time) .. " seconds",
+            "",  -- Space between time and medal message
+            medal_message[1],  -- First line of medal message
+            medal_message[2]   -- Second line of medal message
+        })
+        emu.pause()
     end
 end
 
 -- Function to check if Mario has died
 function checkPlayerDeath()
     local lives = memory.readbyte(0x075A) -- Address for Mario's lives in SMB
-    if lives < 2 and not playerDied then
-        playerDied = true
-        local endFrame = emu.framecount()
-
-        -- Display death message
-        gui.text(10, 10, "Challenge Failed: Mario Died!")
-        emu.frameadvance()
-
-        -- Pause for 5 seconds (300 frames) and then quit
-        while true do
-            gui.text(10, 10, "Challenge Failed: Mario Died!")
-            emu.frameadvance()
-
-            if emu.framecount() - endFrame >= 300 then
-                reset_challenge()
-            end
-        end
+    if lives < 2 then
+        reset_challenge()
     end
 end
 
 reset_challenge()
 -- Main loop
 while true do
+    coreFcn.display_title({"SMB - Collect a mushroom"})
     if startFrame == nil then
         startFrame = emu.framecount()
     end
 
-    --Display Instructions
-    if message_timer > 0 then
-        coreFcn.display_centered_message({"Get the first mushroom","Hold start and then press select to restart"})
-        message_timer = message_timer -1
+    -- Display Instructions and Countdown (-120 so it keeps the message for an extra 2 seconds after countdown)
+    if message_countdown_timer >= -120 then
+		-- Do the Countdown
+		if message_countdown_timer > 0 then 
+			coreFcn.message_and_countdown({"Collect a mushroom"}, message_countdown_timer)
+		elseif message_countdown_timer == 0 then
+			local state = savestate.create(saveStatePath)
+			savestate.load(state)
+			start_frame = emu.framecount()
+		else
+			coreFcn.display_centered_message({"Collect a mushroom"})
+		end
+	
+		message_countdown_timer = message_countdown_timer - 1
     end
 
     if coreFcn.restart_or_abort() then
         reset_challenge()
     end
 
-    if not mushroomPicked then
-        checkMushroom()
-    end
+    checkMushroom()
 
-    if not playerDied then
-        checkPlayerDeath()
-    end
+    checkPlayerDeath()
 
     emu.frameadvance() -- Advance to the next frame
 end
