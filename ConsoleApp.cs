@@ -11,7 +11,7 @@ namespace Retr0lympis
 {
     public class ConsoleApp
     {
-        private List<Game> games = new();
+        private List<Game>? games = [];
         private List<Challenge> marioChallenges = new();
         //private Dictionary<string, List<string>> challenges;
 
@@ -83,38 +83,40 @@ namespace Retr0lympis
         {
             Console.Clear();
             Console.WriteLine("==== Select a Game ====");
-
-            for (int i = 0; i < games.Count; i++)
+            if (games != null)
             {
-                if (File.Exists(games[i].RomPath))
+                for (int i = 0; i < games.Count; i++)
                 {
-                    Console.ForegroundColor = ConsoleColor.White;                    
+                    if (File.Exists(games[i].RomPath))
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                    Console.WriteLine($"{i + 1}. {games[i].Name}");
+                }
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("B. Back");
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.Write("Choose a game: ");
+                var userInput = Console.ReadLine();
+                if (int.TryParse(userInput, out int gameChoice) && gameChoice > 0 && gameChoice <= games.Count)
+                {
+                    Game selectedGame = games[gameChoice - 1];
+                    SelectChallenge(selectedGame);
+                }
+                else if (userInput == "b" || userInput == "B")
+                {
+                    //nothing needs to be done to go back
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid choice. Press any key to return to the main menu.");
+                    Console.ReadKey();
                 }
-                Console.WriteLine($"{i + 1}. {games[i].Name}");
-            }
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("B. Back");
-            Console.ForegroundColor = ConsoleColor.White;
-
-            Console.Write("Choose a game: ");
-            var userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out int gameChoice) && gameChoice > 0 && gameChoice <= games.Count)
-            {
-                Game selectedGame = games[gameChoice - 1];
-                SelectChallenge(selectedGame);
-            }
-            else if(userInput == "b" || userInput =="B")
-            {
-                //nothing needs to be done to go back
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice. Press any key to return to the main menu.");
-                Console.ReadKey();
             }
         }
 
@@ -123,22 +125,25 @@ namespace Retr0lympis
             Console.Clear();
             Console.WriteLine("==== Checking ROMs ====");
 
-            for (int i = 0; i < games.Count; i++)
+            if (games != null)
             {
-                if (File.Exists(games[i].RomPath))
+                for (int i = 0; i < games.Count; i++)
                 {
-                    Console.WriteLine($"OK. {games[i].RomPath}");
+                    if (File.Exists(games[i].RomPath))
+                    {
+                        Console.WriteLine($"OK. {games[i].RomPath}");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"MISSING. {games[i].RomPath}");
+                        Console.ForegroundColor = ConsoleColor.White;
+                    }
                 }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"MISSING. {games[i].RomPath}");
-                    Console.ForegroundColor = ConsoleColor.White;
-                }
-            }
 
-            Console.Write("Press Any key to return to the main menu");
-            Console.ReadKey();
+                Console.Write("Press Any key to return to the main menu");
+                Console.ReadKey();
+            }
         }
 
         private void SelectChallenge(Game game)
@@ -198,9 +203,12 @@ namespace Retr0lympis
 
             try
             {
-                using (Process process = Process.Start(startInfo))
+                using (Process? process = Process.Start(startInfo))
                 {
-                    process.WaitForExit(); // Wait for FCEUX to exit
+                    if (process != null)
+                    {
+                        process.WaitForExit(); // Wait for FCEUX to exit
+                    }
                 }
 
                 // Read the result from the corresponding stats file
