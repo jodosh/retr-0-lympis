@@ -187,12 +187,14 @@ namespace Retr0lympis
             // Define paths
             string fceuxPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fceux64.exe");
             string romPath = game.RomPath;
+            Debug.WriteLine(game.RomPath);
             string saveStatePath = challenge.SaveStatePath;
+            Debug.WriteLine(saveStatePath);
             string luaScriptPath = challenge.LuaScriptPath;
 
             // Start FCEUX with the ROM, save state, and Lua script
+            #if WINDOWS
             string arguments = $"-nogui -bginput 1 -loadstate \"{saveStatePath}\" -lua \"{luaScriptPath}\" \"{romPath}\"";
-
             ProcessStartInfo startInfo = new()
             {
                 FileName = fceuxPath,
@@ -200,6 +202,18 @@ namespace Retr0lympis
                 UseShellExecute = false,
                 CreateNoWindow = false
             };
+            #else
+            string arguments = $"-nogui -bginput 1 --loadlua \"{luaScriptPath}\" \"{romPath}\"";
+            
+
+            ProcessStartInfo startInfo = new()
+            {
+                FileName = "fceux",
+                Arguments = arguments,
+                UseShellExecute = false,
+                CreateNoWindow = false
+            };
+            #endif
 
             try
             {

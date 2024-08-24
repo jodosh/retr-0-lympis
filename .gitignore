@@ -403,3 +403,6 @@ FodyWeavers.xsd
 *.smc
 *.z64
 *.gen
+
+#OSX
+.DS_Store
