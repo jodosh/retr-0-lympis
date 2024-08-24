@@ -271,17 +271,7 @@
     <Content Include="roIcon.ico" />
   </ItemGroup>
 
-
   <ItemGroup>
-    <Content Include="fceux\fcs\TMNT.challenge01.fcs">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="fceux\luascripts\KidIcarus11Challenge.lua">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="images\RetroLympisBanner.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
