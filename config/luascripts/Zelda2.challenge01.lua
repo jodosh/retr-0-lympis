@@ -1,15 +1,18 @@
+local coreFcn = require("core_functions")
+
 -- Initialize variables
 local startFrame = nil
 local challengeName = "Magic in the Dark"
 local magicJarCollected = false
 local countdownFrames = 0
 local timeTaken = 0
-local saveStateFile = "fceux/fcs/Zelda 2 - The Adventure of Link.fc0" -- Specify the save state file
+local saveStateFile = "../fcs/Z2Challenge1.fcs" -- Specify the save state file
 
 -- Function to restart the challenge
 function restartChallenge()
     -- Reload the specified save state file
-    savestate.load(saveStateFile)
+    local state = savestate.create(saveStateFile)
+    savestate.load(state)
 
     -- Reset variables
     startFrame = nil
@@ -33,6 +36,7 @@ function checkMagicJar()
         file:write(challengeName .. "\n")
         file:write("Time to collect magic jar: " .. timeTaken .. " frames\n")
         file:close()
+        emu.pause()
     end
 
     -- Display the title on the screen
@@ -41,17 +45,6 @@ function checkMagicJar()
     -- Display the result after the jar is collected
     if magicJarCollected then
         gui.text(10, 30, "Time to collect magic jar: " .. timeTaken .. " frames")
-    end
-
-    -- If countdown has started, display it and count down
-    if countdownFrames > 0 then
-        gui.text(10, 50, "Closing Challenge in: " .. countdownFrames .. " frames remaining")
-        countdownFrames = countdownFrames - 1
-
-        -- If countdown reaches 0, quit the emulator
-        if countdownFrames == 0 then
-            emu.exit()
-        end
     end
 end
 
@@ -62,7 +55,7 @@ while true do
     end
 
     -- Check for the "R" key press to restart the challenge
-    if input.get()["R"] then
+    if coreFcn.restart_or_abort() then
         restartChallenge()
     end
 

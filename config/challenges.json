@@ -1,0 +1,124 @@
+[
+  {
+    "Name": "Castlevania",
+    "RomPath": "Castlevania.nes",
+    "Challenges": [
+      {
+        "Name": "Kill bat.. knife only",
+        "SaveStatePath": "CV1KillTheBat.fcs",
+        "LuaScriptPath": "CV1BatKnifeChallenge.lua"
+      },
+      {
+        "Name": "Get 10 hearts!",
+        "SaveStatePath": "CV1Get10Hearts.fcs",
+        "LuaScriptPath": "CV110HeartChallenge.lua"
+      },
+      {
+        "Name": "Escape the Castle!",
+        "SaveStatePath": "CV1CastleEscape.fcs",
+        "LuaScriptPath": "CVCastleEscapeChallenge.lua"
+      },
+      {
+        "Name": "Escape the Castle! PART II",
+        "SaveStatePath": "CV1CastleEscapePart2.fcs",
+        "LuaScriptPath": "CVCastleEscapePart2Challenge.lua"
+      },
+      {
+        "Name": "Knight Alley - Find Death!",
+        "SaveStatePath": "CV1KnightAlley.fcs",
+        "LuaScriptPath": "CV1KnightAlleyChallenge.lua"
+      },
+      {
+        "Name": "Cheat Death - Survival Challenge",
+        "SaveStatePath": "CV1CheatDeathChallenge.fcs",
+        "LuaScriptPath": "CV1CheatDeathChallenge.lua"
+      }
+    ]
+  },
+  {
+    "Name": "Kid Icarus",
+    "RomPath": "Kid Icarus.nes",
+    "Challenges": [
+      {
+        "Name": "Finish 1-1",
+        "SaveStatePath": "KidIcarus11challenge.fcs",
+        "LuaScriptPath": "KidIcarus11Challenge.lua"
+      }
+    ]
+  },
+  {
+    "Name": "Super Dodge Ball",
+    "RomPath": "Super Dodge Ball.nes",
+    "Challenges": [
+      {
+        "Name": "Tom must DIE!",
+        "SaveStatePath": "SuperDodgeTomMustDieChallenge.fcs",
+        "LuaScriptPath": "SuperDodgeBallTomMustDieChallenge.lua"
+      }
+    ]
+  },
+  {
+    "Name": "Super Mario Bros.",
+    "RomPath": "Super Mario Bros.nes",
+    "Challenges": [
+      {
+        "Name": "Get the first mushroom",
+        "SaveStatePath": "SMBChallenge1.fcs",
+        "LuaScriptPath": "SMB.challenge01.lua"
+      }
+    ]
+  },
+  {
+    "Name": "Teenage Mutant Ninja Turtles",
+    "RomPath": "Teenage Mutant Ninja Turtles.nes",
+    "Challenges": [
+      {
+        "Name": "Clear the underwater level",
+        "SaveStatePath": "TMNT.challenge01.fcs",
+        "LuaScriptPath": "TMNT.challenge01.lua"
+      },
+      {
+        "Name": "Beat Rocksteady with Raph",
+        "SaveStatePath": "TMNT.challenge02.fcs",
+        "LuaScriptPath": "TMNT.challenge02.lua"
+      }
+    ]
+  },
+  {
+    "Name": "The 3-D Battles of World Runner",
+    "RomPath": "The 3-D Battles of World Runner.nes",
+    "Challenges": [
+      {
+        "Name": "Beat Boss 1",
+        "SaveStatePath": "3-D Battles of World Runner.challenge01.fc0",
+        "LuaScriptPath": "3-D Battles of World Runner.challenge01.lua"
+      }
+    ]
+  },
+  {
+    "Name": "Zelda 2 - The Adventure of Link",
+    "RomPath": "Zelda 2 - The Adventure of Link.nes",
+    "Challenges": [
+      {
+        "Name": "Magic in the Dark",
+        "SaveStatePath": "Z2Challenge1.fcs",
+        "LuaScriptPath": "Zelda2.challenge01.lua"
+      },
+      {
+        "Name": "Kill Horsehead!",
+        "SaveStatePath": "Z2Challenge2.fcs",
+        "LuaScriptPath": "Zelda2.challenge02.lua"
+      },
+      {
+        "Name": "Get that Trophy!",
+        "SaveStatePath": "Z2TrophyChallenge.fcs",
+        "LuaScriptPath": "Zelda2.challenge03.lua"
+      },
+      {
+        "Name": "Get Life 2",
+        "SaveStatePath": "Z2Challenge4.fcs",
+        "LuaScriptPath": "Zelda2.challenge04.lua"
+      }
+    ]
+  }
+]

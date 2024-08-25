@@ -1,3 +1,5 @@
+local coreFcn = require("core_functions")
+
 -- Initialize variables
 local challengeName = "Beat Horse Head"
 local saveStatePath = "../fcs/Z2HorseHeadChallenge.fcs"
@@ -182,10 +184,7 @@ while true do
     -- Set Link's health to full
     memory.writebyte(linkHealthAddress, maxLinkHealth)
 
-    local input_state = joypad.get(1)
-    local selectPressed = input_state["select"] or false
-
-    if selectPressed and not selectPressedLastFrame then
+    if coreFcn.restart_or_abort() then
         resetChallenge()
     end
 

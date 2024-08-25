@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Retr0lympis
@@ -20,12 +21,12 @@ namespace Retr0lympis
             LuaScriptPath = string.Empty;
             ResultPath = string.Empty;
         }
-
+        [JsonConstructor]
         public Challenge(string name, string saveStatePath, string luaScriptPath)
         {
             Name = name;
-            SaveStatePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fcs", saveStatePath);
-            LuaScriptPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "luascripts", luaScriptPath);
+            SaveStatePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "fcs", saveStatePath);
+            LuaScriptPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "luascripts", luaScriptPath);
             ResultPath = luaScriptPath.Replace(".lua", ".RESULTS.txt");
         }
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Retr0lympis
@@ -19,16 +20,17 @@ namespace Retr0lympis
             Challenges = new List<Challenge>();
         }
 
-        public Game(string name, string romPath)
+        public Game(string name, string romFilename)
         {
             Name = name;
-            RomPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "roms", romPath);
+            RomPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "roms", romFilename);
             Challenges = new List<Challenge>();
         }
+        [JsonConstructor]
         public Game(string name, string romPath, List<Challenge> challenges)
         {
             Name = name;
-            RomPath = romPath;
+            RomPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "roms", romPath);
             Challenges = challenges;
         }
 
