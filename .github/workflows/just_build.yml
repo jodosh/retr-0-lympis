@@ -3,7 +3,7 @@ name: Build Retr-0-lympis
 on:
   push:
     branches-ignore:
-      - Release
+      - Main
 
 jobs:
   build:
