@@ -15,7 +15,7 @@ This project requires that you provide your own roms. We do not and will not hel
 
 To install the launcher, you will need to download the latest release from the releases tab. You can find the releases tab at the top of the page. Once you have downloaded the zip file, extract it to a folder of your choice. Once you have done that, you can run the RetroLympis.exe file to start the launcher.
 
-[![Download Button](images/downloadButtonImage.png)](https://github.com/jodosh/retr-0-lympis/releases/tag/v16)
+[![Download Button](images/downloadButtonImage.png)](https://github.com/jodosh/retr-0-lympis/releases/tag/v17)
 
 ## Want to create your own challenges?
 
