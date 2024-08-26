@@ -33,6 +33,9 @@ jobs:
     - name: Publish output osx
       run: dotnet publish -r osx-x64 --configuration Release
 
+    - name: Publish output osx arm
+      run: dotnet publish -r osx-arm --configuration Release
+
     - name: Archive retr0lympis Win
       id: site-zip
       uses: thedoctor0/zip-release@master
@@ -48,6 +51,14 @@ jobs:
           type: zip
           filename: retr0lympis-release-osx.zip
           directory: bin/Release/net8.0/osx-x64/
+
+    - name: Archive retr0lympis OSX arm
+      id: site-zip-osx-arm
+      uses: thedoctor0/zip-release@master
+      with:
+          type: zip
+          filename: retr0lympis-release-osx-arm.zip
+          directory: bin/Release/net8.0/osx-arm/
 
     - name: Create Release
       id: create_release
@@ -70,7 +81,7 @@ jobs:
         asset_content_type: application/zip
 
     - name: Upload Release Asset OSX
-      id: upload-release-asset 
+      id: upload-release-asset-osx 
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -78,5 +89,16 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
         asset_path: bin/Release/net8.0/osx-x64/retr0lympis-release-osx.zip
         asset_name: retr-0-lympis.v${{ github.run_number }}-osx.zip
+        asset_content_type: application/zip
+
+    - name: Upload Release Asset OSX ARM
+      id: upload-release-asset-osx-arm 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+        asset_path: bin/Release/net8.0/osx-arm/retr0lympis-release-osx-arm.zip
+        asset_name: retr-0-lympis.v${{ github.run_number }}-osx-arm.zip
         asset_content_type: application/zip
 
