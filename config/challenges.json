@@ -66,9 +66,14 @@
         "LuaScriptPath": "MegaMan1BeamCrossingChallenge.lua"
       },
       {
-        "Name": "BOSS: Defeat CutMan",
+        "Name": "BOSS: Defeat Cut Man",
         "SaveStatePath": "MegaMan1.challenge03.fcs",
         "LuaScriptPath": "MegaMan1CutManChallenge.lua"
+      },
+      {
+        "Name": "BOSS: Defeat Ice Man (VERY HARD)",
+        "SaveStatePath": "MegaMan1.challenge05.fcs",
+        "LuaScriptPath": "MegaMan1IceManChallenge.lua"
       }
     ]
   },
