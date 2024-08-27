@@ -58,7 +58,7 @@ jobs:
       with:
           type: zip
           filename: retr0lympis-release-osx-arm.zip
-          directory: bin/Release/net8.0/osx-arm/
+          directory: bin/Release/net8.0/osx-arm64/
 
     - name: Create Release
       id: create_release
