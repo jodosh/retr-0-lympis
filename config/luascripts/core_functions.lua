@@ -23,6 +23,12 @@ local function display_title(text)
     gui.text(x, y, title, "white", "black")
 end
 
+local function display_footer(text)
+    local header = text	        
+    gui.box(0, 240, 280, 218, "black", "black")
+    gui.text(40, 222, header, "white", "black")
+end
+
 local function set_medal_times(time_to_silver, time_to_gold, time_to_platinum)
     silver_time = time_to_silver
     gold_time = time_to_gold
@@ -151,5 +157,6 @@ return {
     restart_or_abort = restart_or_abort,
     display_title = display_title,
     set_medal_times = set_medal_times,
-    get_medal_message = get_medal_message
+    get_medal_message = get_medal_message,
+    display_footer = display_footer
 }

@@ -49,6 +49,10 @@
     <None Remove="config\fcs\Kid Icarus.fc0" />
     <None Remove="config\fcs\KidIcarus11challenge.fcs" />
     <None Remove="config\fcs\KidIcarus12challenge.fcs" />
+    <None Remove="config\fcs\MegaMan1.challenge01.fcs" />
+    <None Remove="config\fcs\MegaMan1.challenge02.fcs" />
+    <None Remove="config\fcs\MegaMan1.challenge03.fcs" />
+    <None Remove="config\fcs\MegaMan1.challenge04.fcs" />
     <None Remove="config\fcs\SMBChallenge1.fcs" />
     <None Remove="config\fcs\Super Dodge Ball.bak.fc0" />
     <None Remove="config\fcs\Super Dodge Ball.fc0" />
@@ -70,6 +74,10 @@
     <None Remove="config\luascripts\CVCastleEscapePart2Challenge.lua" />
     <None Remove="config\luascripts\KidIcarus11Challenge.lua" />
     <None Remove="config\luascripts\KidIcarus12Challenge.lua" />
+    <None Remove="config\luascripts\MegaMan1BeamCrossingChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1BombRunChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1ClimbUpChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1CutManChallenge.lua" />
     <None Remove="config\luascripts\SMB.challenge01.lua" />
     <None Remove="config\luascripts\SuperDodgeBallTomMustDieChallenge.lua" />
     <None Remove="config\luascripts\TEMPLATE.lua" />
@@ -157,6 +165,18 @@
     <Content Include="config\fcs\KidIcarus12challenge.fcs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="config\fcs\MegaMan1.challenge01.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\MegaMan1.challenge02.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\MegaMan1.challenge03.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\fcs\MegaMan1.challenge04.fcs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="config\fcs\SMBChallenge1.fcs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -218,6 +238,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="config\luascripts\KidIcarus12Challenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\MegaMan1BeamCrossingChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\MegaMan1BombRunChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\MegaMan1ClimbUpChallenge.lua">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="config\luascripts\MegaMan1CutManChallenge.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="config\luascripts\SMB.challenge01.lua">
