@@ -3,10 +3,10 @@ name: Build Retr-0-lympis
 on:
   push:
     branches:
-      - Main
+      - main
   pull_request:
     branches:
-      - Main
+      - main
 
 jobs:
   build:
@@ -34,7 +34,7 @@ jobs:
       run: dotnet publish -r osx-x64 --configuration Release
 
     - name: Publish output osx arm
-      run: dotnet publish -r osx-arm --configuration Release
+      run: dotnet publish -r osx-arm64 --configuration Release
 
     - name: Archive retr0lympis Win
       id: site-zip
@@ -58,7 +58,7 @@ jobs:
       with:
           type: zip
           filename: retr0lympis-release-osx-arm.zip
-          directory: bin/Release/net8.0/osx-arm/
+          directory: bin/Release/net8.0/osx-arm64/
 
     - name: Create Release
       id: create_release
@@ -98,7 +98,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: bin/Release/net8.0/osx-arm/retr0lympis-release-osx-arm.zip
+        asset_path: bin/Release/net8.0/osx-arm/retr0lympis-release-osx-arm64.zip
         asset_name: retr-0-lympis.v${{ github.run_number }}-osx-arm.zip
         asset_content_type: application/zip
 

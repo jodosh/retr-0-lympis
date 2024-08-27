@@ -12,12 +12,15 @@ namespace Retr0lympis
     public class ConsoleApp
     {
         private List<Game>? games = [];
+        private EventListener? eventListener;
         private List<Challenge> marioChallenges = new();
         //private Dictionary<string, List<string>> challenges;
 
         public ConsoleApp()
         {
             InitializeGames();
+            InitializeEventListener();
+
         }
 
         private void InitializeGames()
@@ -36,6 +39,13 @@ namespace Retr0lympis
 
             Console.WriteLine("List of objects has been exported to challenges.json");
 
+        }
+
+        private void InitializeEventListener()
+        {
+            string eventFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config", "luascripts", "event.txt");
+            eventListener = new EventListener(eventFilePath);
+            eventListener.Start();
         }
 
 
@@ -178,6 +188,7 @@ namespace Retr0lympis
                 Console.ReadKey();
             }
         }
+        
 
         private void LaunchGame(Game game, Challenge challenge)
         {
