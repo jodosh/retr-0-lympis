@@ -47,6 +47,32 @@
     ]
   },
   {
+    "Name": "Mega Man",
+    "RomPath": "Mega Man.nes",
+    "Challenges": [
+      {
+        "Name": "Complete the Bomb Run!",
+        "SaveStatePath": "MegaMan1.challenge01.fcs",
+        "LuaScriptPath": "MegaMan1BombRunChallenge.lua"
+      },
+      {
+        "Name": "Climb Up!",
+        "SaveStatePath": "MegaMan1.challenge02.fcs",
+        "LuaScriptPath": "MegaMan1ClimbUpChallenge.lua"
+      },
+      {
+        "Name": "Cross the Chasm",
+        "SaveStatePath": "MegaMan1.challenge04.fcs",
+        "LuaScriptPath": "MegaMan1BeamCrossingChallenge.lua"
+      },
+      {
+        "Name": "BOSS: Defeat CutMan",
+        "SaveStatePath": "MegaMan1.challenge03.fcs",
+        "LuaScriptPath": "MegaMan1CutManChallenge.lua"
+      }
+    ]
+  },
+  {
     "Name": "Super Dodge Ball",
     "RomPath": "Super Dodge Ball.nes",
     "Challenges": [
@@ -121,4 +147,5 @@
       }
     ]
   }
+
 ]
