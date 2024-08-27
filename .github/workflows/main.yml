@@ -34,7 +34,7 @@ jobs:
       run: dotnet publish -r osx-x64 --configuration Release
 
     - name: Publish output osx arm
-      run: dotnet publish -r osx-arm --configuration Release
+      run: dotnet publish -r osx-arm64 --configuration Release
 
     - name: Archive retr0lympis Win
       id: site-zip
