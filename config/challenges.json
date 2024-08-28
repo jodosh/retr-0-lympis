@@ -71,9 +71,24 @@
         "LuaScriptPath": "MegaMan1CutManChallenge.lua"
       },
       {
-        "Name": "BOSS: Defeat Ice Man (VERY HARD)",
-        "SaveStatePath": "MegaMan1.challenge05.fcs",
-        "LuaScriptPath": "MegaMan1IceManChallenge.lua"
+        "Name": "The Bomb Run 2!",
+        "SaveStatePath": "MegaMan1.challenge06.fcs",
+        "LuaScriptPath": "MegaMan1BombRun2Challenge.lua"
+      },
+      {
+        "Name": "BOSS DAMAGELESS : Defeat BombMan",
+        "SaveStatePath": "MegaMan1.challenge07.fcs",
+        "LuaScriptPath": "MegaMan1BombManDamagelessChallenge.lua"
+      },
+      {
+        "Name": "Fire Escape!",
+        "SaveStatePath": "MegaMan1.challenge08.fcs",
+        "LuaScriptPath": "MegaMan1FlameEscapeChallenge.lua"
+      },
+      {
+        "Name": "Boss: Defeat FireMan!",
+        "SaveStatePath": "MegaMan1.challenge09.fcs",
+        "LuaScriptPath": "MegaMan1FireManChallenge.lua"
       }
     ]
   },
