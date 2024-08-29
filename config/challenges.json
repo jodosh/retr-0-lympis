@@ -89,6 +89,11 @@
         "Name": "Boss: Defeat FireMan!",
         "SaveStatePath": "MegaMan1.challenge09.fcs",
         "LuaScriptPath": "MegaMan1FireManChallenge.lua"
+      },
+      {
+        "Name": "BOSS: Defeat Ice Man (VERY HARD)",
+        "SaveStatePath": "MegaMan1.challenge05.fcs",
+        "LuaScriptPath": "MegaMan1IceManChallenge.lua"
       }
     ]
   },

@@ -87,8 +87,12 @@
     <None Remove="config\luascripts\MegaMan1CutManChallenge.lua" />
     <None Remove="config\luascripts\MegaMan1FireManChallenge.lua" />
     <None Remove="config\luascripts\MegaMan1FlameEscapeChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1BombRunChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1ClimbUpChallenge.lua" />
+    <None Remove="config\luascripts\MegaMan1CutManChallenge.lua" />
     <None Remove="config\luascripts\MegaMan1IceManChallenge.lua" />
     <None Remove="config\luascripts\SMB.challenge01.lua" />
+    <None Remove="config\luascripts\SoundTest.LUA" />
     <None Remove="config\luascripts\SuperDodgeBallTomMustDieChallenge.lua" />
     <None Remove="config\luascripts\TEMPLATE.lua" />
     <None Remove="config\luascripts\TMNT.challenge01.lua" />
@@ -106,6 +110,7 @@
     <None Remove="fceux\taseditor.chm" />
     <None Remove="images\RetroLympisBanner.png" />
     <None Remove="roms\README.txt" />
+    <None Remove="sounds\BEAN_DIP.WAV" />
   </ItemGroup>
 
   <ItemGroup>
@@ -295,6 +300,9 @@
     <Content Include="config\luascripts\SMB.challenge01.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="config\luascripts\SoundTest.LUA">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="config\luascripts\SuperDodgeBallTomMustDieChallenge.lua">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -353,6 +361,13 @@
     <Content Include="roms\README.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="sounds\BEAN_DIP.WAV">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetCoreAudio" Version="2.0.0" />
   </ItemGroup>
 
 </Project>
