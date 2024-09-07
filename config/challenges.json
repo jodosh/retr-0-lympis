@@ -94,6 +94,11 @@
         "Name": "BOSS: Defeat Ice Man (VERY HARD)",
         "SaveStatePath": "MegaMan1.challenge05.fcs",
         "LuaScriptPath": "MegaMan1IceManChallenge.lua"
+      },
+      {
+        "Name": "Survive the Yellow Devil",
+        "SaveStatePath": "Mega Man.yellow devil.fcs",
+        "LuaScriptPath": "MegaManYellowDevilSurvive.lua"
       }
     ]
   },
