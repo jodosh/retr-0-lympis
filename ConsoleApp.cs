@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.InteropServices.JavaScript;
-using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using System.Linq;
 using System.Text.Json;
-using System.Xml.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Retr0lympis
 {
@@ -13,32 +11,24 @@ namespace Retr0lympis
     {
         private List<Game>? games = [];
         private EventListener? eventListener;
-        private List<Challenge> marioChallenges = new();
-        //private Dictionary<string, List<string>> challenges;
 
         public ConsoleApp()
         {
             InitializeGames();
             InitializeEventListener();
-
         }
 
         private void InitializeGames()
         {
-            // Read the JSON from the file
             var options = new JsonSerializerOptions
             {
-                IncludeFields = true, // Include fields in deserialization
-                PropertyNameCaseInsensitive = true // Make matching case-insensitive if needed
+                IncludeFields = true,
+                PropertyNameCaseInsensitive = true
             };
-            var configFile = System.IO.Path.Combine("config", "challenges.json");
+            var configFile = Path.Combine("config", "challenges.json");
             string jsonString = File.ReadAllText(configFile);
-            
-            // Deserialize the JSON string to a list of objects
+
             games = JsonSerializer.Deserialize<List<Game>>(jsonString, options);
-
-            Console.WriteLine("List of objects has been exported to challenges.json");
-
         }
 
         private void InitializeEventListener()
@@ -48,163 +38,179 @@ namespace Retr0lympis
             eventListener.Start();
         }
 
-
         public void Run()
         {
             ShowMainMenu();
         }
 
+        private void SafeClear()
+        {
+            try
+            {
+                if (!Console.IsOutputRedirected)
+                    Console.Clear();
+            }
+            catch (IOException)
+            {
+                // Ignore safely
+            }
+        }
+
+        private int InteractiveMenu(List<string> items, string title)
+        {
+            int selectedIndex = 0;
+            ConsoleKey key;
+
+            do
+            {
+                SafeClear();
+                Console.WriteLine($"==== {title} ====");
+                for (int i = 0; i < items.Count; i++)
+                {
+                    if (i == selectedIndex)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Gray;
+                        Console.ForegroundColor = ConsoleColor.Black;
+                    }
+                    else
+                    {
+                        Console.ResetColor();
+                    }
+
+                    Console.WriteLine(items[i]);
+                }
+
+                Console.ResetColor();
+                Console.WriteLine();
+                Console.WriteLine("Use ↑ ↓ to navigate, Enter to select.");
+
+                key = Console.ReadKey(true).Key;
+
+                if (key == ConsoleKey.UpArrow)
+                {
+                    selectedIndex = (selectedIndex - 1 + items.Count) % items.Count;
+                }
+                else if (key == ConsoleKey.DownArrow)
+                {
+                    selectedIndex = (selectedIndex + 1) % items.Count;
+                }
+
+            } while (key != ConsoleKey.Enter);
+
+            return selectedIndex;
+        }
+
         private void ShowMainMenu()
         {
+            var options = new List<string>
+            {
+                "1. Select Game",
+                "2. Check ROMS",
+                "3. Exit"
+            };
+
             while (true)
             {
-                Console.Clear();
-                Console.WriteLine("==== Retr-0-lympis Launcher ====");
-                Console.WriteLine("1. Select Game");
-                Console.WriteLine("2. Check ROMS");
-                Console.WriteLine("3. Exit");
-                Console.Write("Choose an option: ");
+                int selected = InteractiveMenu(options, "Retr-0-lympis Launcher");
 
-                string? choice = Console.ReadLine();
-
-                if (choice != null)
+                switch (selected)
                 {
-                    switch (choice)
-                    {
-                        case "1":
-                            SelectGame();
-                            break;
-                        case "2":
-                            CheckRoms();
-                            break;
-                        case "3":
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            Console.WriteLine("Invalid choice. Press any key to try again.");
-                            Console.ReadKey();
-                            break;
-                    }
+                    case 0:
+                        SelectGame();
+                        break;
+                    case 1:
+                        CheckRoms();
+                        break;
+                    case 2:
+                        Environment.Exit(0);
+                        break;
                 }
             }
         }
 
         private void SelectGame()
         {
-            Console.Clear();
-            Console.WriteLine("==== Select a Game ====");
-            if (games != null)
+            if (games == null || games.Count == 0)
             {
-                for (int i = 0; i < games.Count; i++)
-                {
-                    if (File.Exists(games[i].RomPath))
-                    {
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                    }
-                    Console.WriteLine($"{i + 1}. {games[i].Name}");
-                }
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("B. Back");
-                Console.ForegroundColor = ConsoleColor.White;
-
-                Console.Write("Choose a game: ");
-                var userInput = Console.ReadLine();
-                if (int.TryParse(userInput, out int gameChoice) && gameChoice > 0 && gameChoice <= games.Count)
-                {
-                    Game selectedGame = games[gameChoice - 1];
-                    SelectChallenge(selectedGame);
-                }
-                else if (userInput == "b" || userInput == "B")
-                {
-                    //nothing needs to be done to go back
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice. Press any key to return to the main menu.");
-                    Console.ReadKey();
-                }
-            }
-        }
-
-        private void CheckRoms()
-        {
-            Console.Clear();
-            Console.WriteLine("==== Checking ROMs ====");
-
-            if (games != null)
-            {
-                for (int i = 0; i < games.Count; i++)
-                {
-                    if (File.Exists(games[i].RomPath))
-                    {
-                        Console.WriteLine($"OK. {games[i].RomPath}");
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"MISSING. {games[i].RomPath}");
-                        Console.ForegroundColor = ConsoleColor.White;
-                    }
-                }
-
-                Console.Write("Press Any key to return to the main menu");
+                Console.WriteLine("No games found.");
                 Console.ReadKey();
+                return;
             }
+
+            var gameDisplayList = games.Select((game, i) =>
+            {
+                bool exists = File.Exists(game.RomPath);
+                string status = exists ? "" : " [MISSING ROM]";
+                return $"{i + 1}. {game.Name}{status}";
+            }).ToList();
+
+            gameDisplayList.Add("Back");
+
+            int selectedIndex = InteractiveMenu(gameDisplayList, "Select a Game");
+
+            if (selectedIndex == gameDisplayList.Count - 1)
+                return;
+
+            SelectChallenge(games[selectedIndex]);
         }
 
         private void SelectChallenge(Game game)
         {
-            Console.Clear();
-            Console.WriteLine($"==== {game.Name} Challenges ====");
-
-            List<Challenge> gameChallenges = game.Challenges;
-
-            for (int i = 0; i < gameChallenges.Count; i++)
+            if (game.Challenges == null || game.Challenges.Count == 0)
             {
-                Console.WriteLine($"{i + 1}. {gameChallenges[i].Name}");
+                Console.WriteLine("No challenges available for this game.");
+                Console.ReadKey();
+                return;
             }
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("B. Back");
-            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.Write("Choose a challenge: ");
-            var userInput = Console.ReadLine();
-            if (int.TryParse(userInput, out int challengeChoice) && challengeChoice > 0 && challengeChoice <= gameChallenges.Count)
+            var challengeDisplayList = game.Challenges.Select((c, i) => $"{i + 1}. {c.Name}").ToList();
+            challengeDisplayList.Add("Back");
+
+            int selectedIndex = InteractiveMenu(challengeDisplayList, $"{game.Name} Challenges");
+
+            if (selectedIndex == challengeDisplayList.Count - 1)
+                return;
+
+            LaunchGame(game, game.Challenges[selectedIndex]);
+        }
+
+        private void CheckRoms()
+        {
+            SafeClear();
+            Console.WriteLine("==== Checking ROMs ====");
+
+            if (games != null)
             {
-                Challenge selectedChallenge = gameChallenges[challengeChoice - 1];
-                LaunchGame(game, selectedChallenge);
-            }
-            else if (userInput == "b" || userInput == "B")
-            {
-                SelectGame();
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice. Press any key to return to the main menu.");
+                foreach (var game in games)
+                {
+                    if (File.Exists(game.RomPath))
+                    {
+                        Console.WriteLine($"OK. {game.RomPath}");
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"MISSING. {game.RomPath}");
+                        Console.ResetColor();
+                    }
+                }
+
+                Console.Write("Press any key to return to the main menu");
                 Console.ReadKey();
             }
         }
-        
 
         private void LaunchGame(Game game, Challenge challenge)
         {
-            Console.Clear();
+            SafeClear();
             Console.WriteLine($"Launching {game.Name} with challenge: {challenge.Name}");
 
-            // Define paths
-            string fceuxPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fceux64.exe");
+            string fceuxPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fceux64.exe");
             string romPath = game.RomPath;
-            Debug.WriteLine(game.RomPath);
             string saveStatePath = challenge.SaveStatePath;
-            Debug.WriteLine(saveStatePath);
             string luaScriptPath = challenge.LuaScriptPath;
 
-            // Start FCEUX with the ROM, save state, and Lua script
-            #if WINDOWS
+#if WINDOWS
             string arguments = $"-nogui -bginput 1 -loadstate \"{saveStatePath}\" -lua \"{luaScriptPath}\" \"{romPath}\"";
             ProcessStartInfo startInfo = new()
             {
@@ -213,10 +219,8 @@ namespace Retr0lympis
                 UseShellExecute = false,
                 CreateNoWindow = false
             };
-            #else
+#else
             string arguments = $"-nogui -bginput 1 --loadlua \"{luaScriptPath}\" \"{romPath}\"";
-            
-
             ProcessStartInfo startInfo = new()
             {
                 FileName = "fceux",
@@ -224,7 +228,7 @@ namespace Retr0lympis
                 UseShellExecute = false,
                 CreateNoWindow = false
             };
-            #endif
+#endif
 
             try
             {
@@ -232,15 +236,14 @@ namespace Retr0lympis
                 {
                     if (process != null)
                     {
-                        process.WaitForExit(); // Wait for FCEUX to exit
+                        process.WaitForExit();
                     }
                 }
 
-                // Read the result from the corresponding stats file
                 string resultPath = luaScriptPath.Replace(".lua", ".txt");
-                if (System.IO.File.Exists(resultPath))
+                if (File.Exists(resultPath))
                 {
-                    string result = System.IO.File.ReadAllText(resultPath);
+                    string result = File.ReadAllText(resultPath);
                     Console.WriteLine("Challenge Result:");
                     Console.WriteLine(result);
                 }
@@ -258,8 +261,5 @@ namespace Retr0lympis
             Console.WriteLine("Press any key to return to the main menu.");
             Console.ReadKey();
         }
-
-
-
     }
 }
