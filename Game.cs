@@ -36,7 +36,7 @@ namespace Retr0lympis
 
         public void AddChallenge(string challengeName, string saveStateName, string luaScriptName)
         {
-            Challenge newChallenge = new Challenge(challengeName, saveStateName, luaScriptName);
+            Challenge newChallenge = new Challenge(challengeName, saveStateName, luaScriptName, null);
             Challenges.Add(newChallenge);
         }
     }

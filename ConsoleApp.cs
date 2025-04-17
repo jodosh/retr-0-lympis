@@ -207,7 +207,7 @@ namespace Retr0lympis
 
             string fceuxPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "fceux", "fceux64.exe");
             string romPath = game.RomPath;
-            string saveStatePath = challenge.SaveStatePath;
+            string saveStatePath = challenge.SaveState1Path;
             string luaScriptPath = challenge.LuaScriptPath;
 
 #if WINDOWS

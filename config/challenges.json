@@ -5,32 +5,32 @@
     "Challenges": [
       {
         "Name": "Kill bat.. knife only",
-        "SaveStatePath": "CV1KillTheBat.fcs",
+        "SaveState0Path": "CV1KillTheBat.fcs",
         "LuaScriptPath": "CV1BatKnifeChallenge.lua"
       },
       {
         "Name": "Get 10 hearts!",
-        "SaveStatePath": "CV1Get10Hearts.fcs",
+        "SaveState0Path": "CV1Get10Hearts.fcs",
         "LuaScriptPath": "CV110HeartChallenge.lua"
       },
       {
         "Name": "Escape the Castle!",
-        "SaveStatePath": "CV1CastleEscape.fcs",
+        "SaveState0Path": "CV1CastleEscape.fcs",
         "LuaScriptPath": "CVCastleEscapeChallenge.lua"
       },
       {
         "Name": "Escape the Castle! PART II",
-        "SaveStatePath": "CV1CastleEscapePart2.fcs",
+        "SaveState0Path": "CV1CastleEscapePart2.fcs",
         "LuaScriptPath": "CVCastleEscapePart2Challenge.lua"
       },
       {
         "Name": "Knight Alley - Find Death!",
-        "SaveStatePath": "CV1KnightAlley.fcs",
+        "SaveState0Path": "CV1KnightAlley.fcs",
         "LuaScriptPath": "CV1KnightAlleyChallenge.lua"
       },
       {
         "Name": "Cheat Death - Survival Challenge",
-        "SaveStatePath": "CV1CheatDeathChallenge.fcs",
+        "SaveState0Path": "CV1CheatDeathChallenge.fcs",
         "LuaScriptPath": "CV1CheatDeathChallenge.lua"
       }
     ]
@@ -41,7 +41,7 @@
     "Challenges": [
       {
         "Name": "Finish 1-1",
-        "SaveStatePath": "KidIcarus11challenge.fcs",
+        "SaveState0Path": "KidIcarus11challenge.fcs",
         "LuaScriptPath": "KidIcarus11Challenge.lua"
       }
     ]
@@ -52,47 +52,48 @@
     "Challenges": [
       {
         "Name": "Complete the Bomb Run!",
-        "SaveStatePath": "MegaMan1.challenge01.fcs",
+        "SaveState0Path": "MegaMan1.challenge01.fcs",
+        "SaveState1Path": "TESTINGMegaMan1.challenge01.fcs",
         "LuaScriptPath": "MegaMan1BombRunChallenge.lua"
       },
       {
         "Name": "Climb Up!",
-        "SaveStatePath": "MegaMan1.challenge02.fcs",
+        "SaveState0Path": "MegaMan1.challenge02.fcs",
         "LuaScriptPath": "MegaMan1ClimbUpChallenge.lua"
       },
       {
         "Name": "Cross the Chasm",
-        "SaveStatePath": "MegaMan1.challenge04.fcs",
+        "SaveState0Path": "MegaMan1.challenge04.fcs",
         "LuaScriptPath": "MegaMan1BeamCrossingChallenge.lua"
       },
       {
         "Name": "BOSS: Defeat Cut Man",
-        "SaveStatePath": "MegaMan1.challenge03.fcs",
+        "SaveState0Path": "MegaMan1.challenge03.fcs",
         "LuaScriptPath": "MegaMan1CutManChallenge.lua"
       },
       {
         "Name": "The Bomb Run 2!",
-        "SaveStatePath": "MegaMan1.challenge06.fcs",
+        "SaveState0Path": "MegaMan1.challenge06.fcs",
         "LuaScriptPath": "MegaMan1BombRun2Challenge.lua"
       },
       {
         "Name": "BOSS DAMAGELESS : Defeat BombMan",
-        "SaveStatePath": "MegaMan1.challenge07.fcs",
+        "SaveState0Path": "MegaMan1.challenge07.fcs",
         "LuaScriptPath": "MegaMan1BombManDamagelessChallenge.lua"
       },
       {
         "Name": "Fire Escape!",
-        "SaveStatePath": "MegaMan1.challenge08.fcs",
+        "SaveState0Path": "MegaMan1.challenge08.fcs",
         "LuaScriptPath": "MegaMan1FlameEscapeChallenge.lua"
       },
       {
         "Name": "Boss: Defeat FireMan!",
-        "SaveStatePath": "MegaMan1.challenge09.fcs",
+        "SaveState0Path": "MegaMan1.challenge09.fcs",
         "LuaScriptPath": "MegaMan1FireManChallenge.lua"
       },
       {
         "Name": "BOSS: Defeat Ice Man (VERY HARD)",
-        "SaveStatePath": "MegaMan1.challenge05.fcs",
+        "SaveState0Path": "MegaMan1.challenge05.fcs",
         "LuaScriptPath": "MegaMan1IceManChallenge.lua"
       }
     ]
@@ -103,7 +104,7 @@
     "Challenges": [
       {
         "Name": "Tom must DIE!",
-        "SaveStatePath": "SuperDodgeTomMustDieChallenge.fcs",
+        "SaveState0Path": "SuperDodgeTomMustDieChallenge.fcs",
         "LuaScriptPath": "SuperDodgeBallTomMustDieChallenge.lua"
       }
     ]
@@ -114,7 +115,7 @@
     "Challenges": [
       {
         "Name": "Get the first mushroom",
-        "SaveStatePath": "SMBChallenge1.fcs",
+        "SaveState0Path": "SMBChallenge1.fcs",
         "LuaScriptPath": "SMB.challenge01.lua"
       }
     ]
@@ -125,12 +126,12 @@
     "Challenges": [
       {
         "Name": "Clear the underwater level",
-        "SaveStatePath": "TMNT.challenge01.fcs",
+        "SaveState0Path": "TMNT.challenge01.fcs",
         "LuaScriptPath": "TMNT.challenge01.lua"
       },
       {
         "Name": "Beat Rocksteady with Raph",
-        "SaveStatePath": "TMNT.challenge02.fcs",
+        "SaveState0Path": "TMNT.challenge02.fcs",
         "LuaScriptPath": "TMNT.challenge02.lua"
       }
     ]
@@ -141,7 +142,7 @@
     "Challenges": [
       {
         "Name": "Beat Boss 1",
-        "SaveStatePath": "3-D Battles of World Runner.challenge01.fc0",
+        "SaveState0Path": "3-D Battles of World Runner.challenge01.fc0",
         "LuaScriptPath": "3-D Battles of World Runner.challenge01.lua"
       }
     ]
@@ -152,22 +153,22 @@
     "Challenges": [
       {
         "Name": "Magic in the Dark",
-        "SaveStatePath": "Z2Challenge1.fcs",
+        "SaveState0Path": "Z2Challenge1.fcs",
         "LuaScriptPath": "Zelda2.challenge01.lua"
       },
       {
         "Name": "Kill Horsehead!",
-        "SaveStatePath": "Z2Challenge2.fcs",
+        "SaveState0Path": "Z2Challenge2.fcs",
         "LuaScriptPath": "Zelda2.challenge02.lua"
       },
       {
         "Name": "Get that Trophy!",
-        "SaveStatePath": "Z2TrophyChallenge.fcs",
+        "SaveState0Path": "Z2TrophyChallenge.fcs",
         "LuaScriptPath": "Zelda2.challenge03.lua"
       },
       {
         "Name": "Get Life 2",
-        "SaveStatePath": "Z2Challenge4.fcs",
+        "SaveState0Path": "Z2Challenge4.fcs",
         "LuaScriptPath": "Zelda2.challenge04.lua"
       }
     ]
